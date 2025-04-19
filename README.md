@@ -1,47 +1,15 @@
-```markdown
 # AstaScannerV1 🚀
 
-**AstaScannerV1** adalah alat pemindaian web yang dirancang untuk mengumpulkan informasi dan melakukan eksploitasi otomatis terhadap situs web. Dibangun menggunakan Python, alat ini dapat digunakan untuk berbagai tujuan seperti mengumpulkan informasi WHOIS, melakukan pemindaian DNS, mendeteksi CMS atau framework yang digunakan, mencari panel admin, serta melakukan pemindaian dengan alat seperti Nmap dan Nuclei.
+## Installation ⚙️
 
-🔍 **AstaScannerV1** cocok untuk profesional keamanan siber, penguji penetrasi, dan pengembang yang ingin memetakan dan mengidentifikasi potensi kerentanannya dengan cepat.
-
-## Fitur 🎯
-
-- **WHOIS Information**: Mengumpulkan informasi tentang kepemilikan domain dan data terkait lainnya.
-- **DNS Lookup**: Melakukan pencarian DNS untuk menemukan alamat IP yang terkait dengan domain target.
-- **CMS/Framework Detection**: Menentukan sistem manajemen konten (CMS) atau framework yang digunakan oleh situs web (misalnya WordPress, Joomla, Drupal, dll).
-- **Admin Panel Finder**: Mencari panel admin yang dapat diakses di situs web target, seperti `/admin`, `/wp-admin`, dll.
-- **Nmap Scan**: Melakukan pemindaian port untuk mengecek status port terbuka (misalnya port 21, 22, 80, 443, dll.).
-- **Nuclei Scan**: Menjalankan pemindaian kerentan dengan Nuclei untuk mendeteksi potensi celah keamanan.
-- **Auto Exploit**: Secara otomatis menjalankan eksploitasi terhadap CMS yang terdeteksi (tergantung pada script eksploitasi yang ada).
-
-## Prasyarat ⚙️
-
-Pastikan Anda memenuhi semua prasyarat berikut sebelum menjalankan **AstaScannerV1**:
-
-- **Python 3.6+** (Disarankan menggunakan `venv` untuk manajemen lingkungan virtual).
-- **Paket Python yang diperlukan**:
-  - `requests`
-  - `whois`
-  - `nmap`
-  - `dns.resolver`
-  - `termcolor`
-  - `beautifulsoup4`
-  - `pyfiglet`
-- **Nmap** dan **Nuclei** harus diinstal di sistem Anda.
-
-## Instalasi 🔧
-
-Ikuti langkah-langkah di bawah ini untuk menginstal dan menyiapkan **AstaScannerV1**:
-
-1. **Clone atau unduh proyek ini**:
+1. **Clone or download the project**:
 
     ```bash
     git clone https://github.com/username/asta-scanner.git
     cd asta-scanner
     ```
 
-2. **(Opsional) Buat dan aktifkan lingkungan virtual**:
+2. **(Optional) Create and activate a virtual environment**:
 
     - **Linux/macOS**:
 
@@ -57,89 +25,56 @@ Ikuti langkah-langkah di bawah ini untuk menginstal dan menyiapkan **AstaScanner
     venv\Scripts\activate
     ```
 
-3. **Instal dependensi yang diperlukan**:
+3. **Install the required dependencies**:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-## Penggunaan 💻
+## Usage 💻
 
-Setelah instalasi selesai, Anda dapat menjalankan **AstaScannerV1** dengan mengikuti langkah-langkah berikut:
-
-1. Jalankan skrip `asta.py`:
+1. Run the `asta.py` script:
 
     ```bash
     python asta.py
     ```
 
-2. Masukkan **domain** atau **IP** target yang ingin Anda pindai dan pilih protokol yang sesuai (`http` atau `https`).
+2. Enter the **domain** or **IP** of the target you want to scan and select the appropriate protocol (`http` or `https`).
 
-## Penjelasan Fitur 📝
+## Features 🎯
 
 ### 1. WHOIS Information
 
-Alat ini mengumpulkan informasi tentang siapa yang memiliki domain dan informasi terkait lainnya, seperti alamat email atau kontak administratif. Sangat berguna untuk mendapatkan gambaran tentang pemilik situs.
+Collects information about the ownership of the domain and other related data, such as email addresses or administrative contacts.
 
 ### 2. DNS Lookup
 
-Memungkinkan Anda untuk memeriksa alamat IP yang terkait dengan domain target. Ini penting untuk pemetaan jaringan atau analisis lebih lanjut mengenai konfigurasi server.
+Allows you to check the IP addresses associated with the target domain. This is important for network mapping or further analysis of server configuration.
 
 ### 3. CMS/Framework Detection
 
-AstaScannerV1 dapat mendeteksi apakah situs web menggunakan CMS atau framework tertentu (seperti WordPress, Joomla, atau Drupal). Ini membantu mengidentifikasi teknologi yang digunakan dan potensi kerentanannya.
+AstaScannerV1 can detect if the website is using a specific CMS or framework (such as WordPress, Joomla, or Drupal). This helps identify the technology used and potential vulnerabilities.
 
 ### 4. Admin Panel Finder
 
-Fitur ini mencari URL yang sering digunakan untuk panel admin, seperti `/admin` atau `/wp-admin`, untuk mengekspos kemungkinan titik masuk ke sistem.
+This feature searches for commonly used admin panel URLs, such as `/admin` or `/wp-admin`, to expose potential entry points to the system.
 
 ### 5. Nmap Scan
 
-Melakukan pemindaian port untuk menemukan port penting yang terbuka, seperti port untuk SSH, HTTP, HTTPS, dan FTP. Ini dapat membantu dalam menemukan layanan yang berjalan pada server target.
+Performs port scanning to find open ports, such as those for SSH, HTTP, HTTPS, and FTP. This can help identify services running on the target server.
 
 ### 6. Nuclei Scan
 
-Pemindaian kerentan menggunakan **Nuclei** untuk mendeteksi potensi kerentanannya berdasarkan template eksploitasi yang sudah ada.
+Vulnerability scanning using **Nuclei** to detect potential vulnerabilities based on available exploit templates.
 
 ### 7. Auto Exploit
 
-Ketika CMS terdeteksi, AstaScannerV1 dapat mencoba untuk mengeksekusi eksploitasi otomatis terhadap CMS tersebut, jika skrip eksploitasi sudah tersedia di dalam alat.
+When a CMS is detected, AstaScannerV1 can attempt to automatically execute exploits against the CMS, if exploit scripts are available within the tool.
 
-## Catatan ⚠️
+## Contributing 🤝
 
-- **Izin**: Pastikan Anda memiliki izin eksplisit untuk melakukan pemindaian terhadap situs web yang Anda tuju. Melakukan pemindaian tanpa izin dapat melanggar hukum.
-- **Penggunaan Etis**: Gunakan alat ini secara etis dan hanya untuk tujuan yang sah, seperti uji penetrasi dengan izin atau penelitian keamanan.
-- **Ketersediaan Dependensi**: Pastikan bahwa semua dependensi yang diperlukan sudah terinstal dengan benar sebelum menjalankan alat ini.
+If you're interested in contributing to the development of **AstaScannerV1**, you can submit **pull requests** or report bugs by opening **issues**.
 
-## Kontribusi 🤝
+## License 📄
 
-Jika Anda tertarik untuk berkontribusi pada pengembangan **AstaScannerV1**, Anda dapat mengajukan **pull request** atau melaporkan bug dengan membuka **issue**.
-
-### Cara Berkontribusi:
-
-1. Fork repositori ini.
-2. Buat branch baru untuk fitur atau perbaikan Anda:
-
-    ```bash
-    git checkout -b feature/your-feature
-    ```
-
-3. Lakukan perubahan yang diperlukan.
-4. Commit perubahan Anda:
-
-    ```bash
-    git commit -am 'Add new feature'
-    ```
-
-5. Push ke branch tersebut:
-
-    ```bash
-    git push origin feature/your-feature
-    ```
-
-6. Buka **pull request** di GitHub.
-
-## Lisensi 📄
-
-Proyek ini dilisensikan di bawah **MIT License**. Lihat file [LICENSE](LICENSE) untuk detail lebih lanjut.
-```
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
