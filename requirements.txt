@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+pyfiglet
+nmap
+whois
+dnsresolver
+termcolor
+
